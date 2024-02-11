@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Muli' , sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.fas fas-times{
+    color: black;
+}
+.text{
+    text-transform: uppercase;
+}
+.nav-btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size:20px ;
+}
+.open-btn{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+.nav.visible{
+    transform: translateX(0);
+}
+.logo{
+    width: 300px;
+
+}
+.logo:hover{
+    transform: translateY(10px);
+    transition: transform 3.0s  ease-in-out ;
+}
+
+.nav-black{
+    background-color: rgb(34,31,31);
+    width: 60%;
+    max-width: 480px;
+    min-width: 320px;
+    /* animation-name: moveInblack; */
+    animation-duration: 1.1s;
+    transition-delay: 0.4s;
+}
+@keyframes moveInblack{
+    0%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+.nav-red{
+    background-color: rgb(229,9,20);
+    width: 95%;
+    /* animation-name: moveInred; */
+    animation-duration: 1.1s;
+    transition-delay: 0.2s;
+}
+@keyframes moveInred{
+    0%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+.nav-white{
+    background-color: #fff;
+    width: 90%;
+    padding: 40px;
+    position: relative;
+    /* animation-name: moveInwhite; */
+    animation-duration: 1.2s;
+}
+@keyframes moveInwhite{
+    0%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+.nav-black{
+    background-color: rgb(34, 31, 31);
+    width: 60%;
+    max-width: 480px;
+    min-width: 320px;
+}
+nav-red{
+    background-color: rgb(229,9,20);
+    width: 95%;
+}
+.nav-white{
+    background-color: #fff;
+    width: 95%;
+    padding: 40px;
+    position: relative;
+}
+.close-btn{
+    position: absolute;
+    opacity: 0.3;
+    top: 40px;
+    right: 30px;
+}
+
+.list{
+    list-style-type: none;
+    padding: 0;
+}
+.list li{
+    margin: 20px 0;
+}
+.list li a {
+    color: rgb(34, 31, 31);
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.list ul{
+    list-style-type:none ;
+    padding-left: 20px;
+}
+.container{
+    display: flex;
+    width: 90vw;
+    animation-name: moveInPanel;
+    animation-duration: 1s;
+}
+.about_page{
+    display: flex;
+    align-items: end;
+    border: solid;
+}
+.panel{
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin:20px;
+    opacity: 0;
+}
+
+ 
+.panel.active{
+    flex:5
+}
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+@keyframes moveInPanel{
+    0%{
+        opacity: 0;
+        transform: translate(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(100px);
+    }
+}
+
+.box{
+    display: flex;
+}
+.inner{
+    width: 490px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 4em;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.inner:first-child{
+    background-color:  rgb(229,9,20);
+    /* background-image: url(images/Me1.jpg) ; */
+    color:  rgb(165, 41, 47);
+    transform-origin: right;
+    transform: perspective(100px)
+    rotateY(-10deg);
+}
+.inner:last-child{
+    background-color: lightsalmon;
+    color: aliceblue;
+    transform-origin: left;
+    transform: perspective(100px)
+    rotateY(10deg);
+}
+span{
+    position: absolute;
+    animation: marquee 5s linear infinite;
+}
+.inner:first-child span{
+    animation-delay: 2.5s;
+    left: -100%;
+}
+
+@keyframes marquee{
+    from{
+        left: 100%;
+    }
+    to{
+        left: -100%;
+    }
+}
